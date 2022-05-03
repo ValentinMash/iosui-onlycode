@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UITabBarViewController.swift
 //  Navigation
 //
 //  Created by Valentin Mashutin on 03.05.2022.
@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UITabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+
+        view.backgroundColor = .red
     }
+    
+
 
 
 }
-
