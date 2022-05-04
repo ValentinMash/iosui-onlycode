@@ -11,6 +11,7 @@ class UITabBarViewController: UITabBarController {
     
     let userFeed = FeedViewController()
     let userProfile = ProfileViewController()
+    let userPost = PostViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,13 +20,23 @@ class UITabBarViewController: UITabBarController {
     }
     
     func setupTabBar(){
-        userFeed.tabBarItem.title = "Пост"
+        
+        let navControllerFeed = UINavigationController(rootViewController: userFeed)
+        userFeed.tabBarItem.title = "Статус"
         userFeed.tabBarItem.image = UIImage(systemName: "bolt")
+        userFeed.navigationItem.title = "Статус пользователя"
         
+        let navControllerProfile = UINavigationController(rootViewController: userProfile)
         userProfile.tabBarItem.title = "Профиль"
-        userProfile.tabBarItem.image = UIImage(systemName: "star")
+        userProfile.tabBarItem.image = UIImage(systemName: "smiley")
+        userProfile.navigationItem.title = "Профиль пользователя"
         
-        viewControllers = [userFeed, userProfile]
+        let navControllerPost = UINavigationController(rootViewController: userPost)
+        userPost.tabBarItem.title = "Пост"
+        userPost.tabBarItem.image = UIImage(systemName: "star")
+        userPost.navigationItem.title = "Пост пользователя"
+        
+        viewControllers = [navControllerFeed, navControllerProfile, navControllerPost]
     }
 
 

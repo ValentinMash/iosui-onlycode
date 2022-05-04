@@ -2,11 +2,11 @@
 
 *.jpg
 
-*.json
+# *.json
 
-*.xcbkptlist
+# *.xcbkptlist
 
-*.plist
+# *.plist
 
 # Игнор лист
 
