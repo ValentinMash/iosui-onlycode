@@ -10,7 +10,6 @@
 		A7992E332822F171001047E7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E322822F171001047E7 /* PostViewController.swift */; };
 		A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E3428244F84001047E7 /* InfoViewController.swift */; };
 		A7C5957D2821A07C00400DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5957C2821A07C00400DC4 /* AppDelegate.swift */; };
-		A7C595812821A07C00400DC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C595802821A07C00400DC4 /* ViewController.swift */; };
 		A7C595862821A07F00400DC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C595852821A07F00400DC4 /* Assets.xcassets */; };
 		A7C595892821A07F00400DC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7C595872821A07F00400DC4 /* LaunchScreen.storyboard */; };
 		A7C595952821B7E400400DC4 /* UITabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C595942821B7E400400DC4 /* UITabBarViewController.swift */; };
@@ -23,7 +22,6 @@
 		A7992E3428244F84001047E7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		A7C595792821A07C00400DC4 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C5957C2821A07C00400DC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7C595802821A07C00400DC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A7C595852821A07F00400DC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7C595882821A07F00400DC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A7C5958A2821A07F00400DC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				A7992E3428244F84001047E7 /* InfoViewController.swift */,
 				A7C595962821BAF600400DC4 /* FeedViewController.swift */,
 				A7C595982821BB2E00400DC4 /* ProfileViewController.swift */,
-				A7C595802821A07C00400DC4 /* ViewController.swift */,
 				A7C595852821A07F00400DC4 /* Assets.xcassets */,
 				A7C595872821A07F00400DC4 /* LaunchScreen.storyboard */,
 				A7C5958A2821A07F00400DC4 /* Info.plist */,
@@ -148,7 +145,6 @@
 			files = (
 				A7992E332822F171001047E7 /* PostViewController.swift in Sources */,
 				A7C595952821B7E400400DC4 /* UITabBarViewController.swift in Sources */,
-				A7C595812821A07C00400DC4 /* ViewController.swift in Sources */,
 				A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */,
 				A7C595992821BB2E00400DC4 /* ProfileViewController.swift in Sources */,
 				A7C595972821BAF600400DC4 /* FeedViewController.swift in Sources */,
