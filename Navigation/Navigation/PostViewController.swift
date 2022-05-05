@@ -25,6 +25,6 @@ class PostViewController: UIViewController {
         let viewController = InfoViewController()
         viewController.title = "Информация"
         navigationController?.pushViewController(viewController, animated: true)
-    }
+            }
 
 }

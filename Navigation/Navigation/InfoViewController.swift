@@ -29,6 +29,7 @@ class InfoViewController: UIViewController {
         alert.addAction(ok)
         alert.addAction(cancel)
         present(alert, animated: true)
+        print("Alert!")
     }
    
 }
