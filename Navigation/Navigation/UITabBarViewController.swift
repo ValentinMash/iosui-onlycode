@@ -12,7 +12,7 @@ class UITabBarViewController: UITabBarController {
     let userFeed = FeedViewController()
     let userProfile = ProfileViewController()
     let userPost = PostViewController()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
@@ -38,6 +38,5 @@ class UITabBarViewController: UITabBarController {
         
         viewControllers = [navControllerFeed, navControllerProfile, navControllerPost]
     }
-
-
+    
 }

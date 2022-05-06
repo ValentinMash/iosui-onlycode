@@ -8,13 +8,13 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
         addButton()
-      
     }
+    
     func addButton(){
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
         button.center = view.center
@@ -23,6 +23,7 @@ class InfoViewController: UIViewController {
         button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         view.addSubview(button)
     }
+    
     @objc func tapAction (){
         let alert = UIAlertController(title: "Назад", message: "Точно назад?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "Выйти", style: .default)
@@ -32,5 +33,5 @@ class InfoViewController: UIViewController {
         present(alert, animated: true)
         print("Alert!")
     }
-   
+    
 }
