@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7248CDF2825AE7700EA9A2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */; };
 		A7992E332822F171001047E7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E322822F171001047E7 /* PostViewController.swift */; };
 		A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E3428244F84001047E7 /* InfoViewController.swift */; };
 		A7C5957D2821A07C00400DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5957C2821A07C00400DC4 /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7992E322822F171001047E7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A7992E3428244F84001047E7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		A7C595792821A07C00400DC4 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				A7C5957C2821A07C00400DC4 /* AppDelegate.swift */,
+				A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */,
 				A7C595942821B7E400400DC4 /* UITabBarViewController.swift */,
 				A7992E322822F171001047E7 /* PostViewController.swift */,
 				A7992E3428244F84001047E7 /* InfoViewController.swift */,
@@ -144,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7992E332822F171001047E7 /* PostViewController.swift in Sources */,
+				A7248CDF2825AE7700EA9A2F /* SceneDelegate.swift in Sources */,
 				A7C595952821B7E400400DC4 /* UITabBarViewController.swift in Sources */,
 				A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */,
 				A7C595992821BB2E00400DC4 /* ProfileViewController.swift in Sources */,
