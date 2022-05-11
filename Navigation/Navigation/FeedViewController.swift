@@ -14,7 +14,6 @@ struct Post {
 
 class FeedViewController: UIViewController {
     
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
@@ -29,6 +28,7 @@ class FeedViewController: UIViewController {
         button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
         view.addSubview(button)
     }
+    
     @objc func tapAction() {
         let viewController = PostViewController()
         present(viewController, animated: true)
