@@ -7,30 +7,71 @@
 
 import UIKit
 
-struct Post {
-    var title = "Новый пост пользователя"
-}
-
-
 class FeedViewController: UIViewController {
+
+    private lazy var verticalStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    private let firstButton = UIButton()
+    private let secondButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        makeButton()
+        self.view.backgroundColor = .white
+        setupNavigationBar()
+        self.setupView()
+    }
+
+    private func setupNavigationBar() {
+        self.navigationController?.navigationBar.prefersLargeTitles = false
+        self.navigationItem.title = "Feed"
     }
     
-    func makeButton(){
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        button.center = view.center
-        button.setTitle("Переход", for: .normal)
-        button.backgroundColor = .brown
-        button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
-        view.addSubview(button)
+    private func setupView() {
+        self.view.addSubview(verticalStackView)
+        
+        let buttons = [firstButton, secondButton]
+        buttons.enumerated().forEach({ (index, button) in
+            switch index {
+            case 0:
+                button.setTitle("Open post", for: .normal)
+                button.layer.cornerRadius = 12
+                button.backgroundColor = .systemYellow
+                button.setTitleColor(.white, for: .normal)
+                button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+            case 1:
+                button.setTitle("Read more", for: .normal)
+                button.layer.cornerRadius = 12
+                button.backgroundColor = .systemPurple
+                button.setTitleColor(.white, for: .normal)
+                button.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+            default:
+                break
+            }
+        })
+        
+        self.verticalStackView.addArrangedSubview(firstButton)
+        self.verticalStackView.addArrangedSubview(secondButton)
+        
+        let stackViewCenterXConstraint = self.verticalStackView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        let stackViewCenterYConstraint = self.verticalStackView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+        let widthStackView = self.verticalStackView.widthAnchor.constraint(equalToConstant: 200)
+        let heightFirstButton = self.firstButton.heightAnchor.constraint(equalToConstant: 60)
+        
+        
+        NSLayoutConstraint.activate([
+            stackViewCenterXConstraint, stackViewCenterYConstraint, heightFirstButton, widthStackView
+        ].compactMap({ $0 }))
     }
     
-    @objc func tapAction() {
-        let viewController = PostViewController()
-        present(viewController, animated: true)
+    @objc func tapButton() {
+        let postVC = PostViewController()
+        self.navigationController?.pushViewController(postVC, animated: true)
     }
 }

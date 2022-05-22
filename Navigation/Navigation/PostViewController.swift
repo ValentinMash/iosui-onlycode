@@ -8,25 +8,10 @@
 import UIKit
 
 class PostViewController: UIViewController {
-    
-    var post = Post()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .orange
-        self.title = post.title
-        makeBarItem()
+
+        self.view.backgroundColor = .systemMint
     }
-    
-    func makeBarItem(){
-        let barItem = UIBarButtonItem(title: "Дальше", style: .plain, target: self, action: #selector(tapAction))
-        navigationItem.rightBarButtonItem = barItem
-    }
-    
-    @objc func tapAction(){
-        let viewController = InfoViewController()
-        viewController.title = "Информация"
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
 }
