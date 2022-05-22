@@ -99,5 +99,4 @@ final class ProfileHeaderView: UIView {
             trailingStatusButtonConstraint, bottomStatusButtonConstraint, heightStatusButtonConstraint
         ].compactMap({ $0 }))
     }
-   
 }

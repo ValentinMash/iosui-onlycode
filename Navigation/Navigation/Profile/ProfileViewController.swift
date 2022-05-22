@@ -29,7 +29,6 @@ final class ProfileViewController: UIViewController {
         super.viewDidLoad()
         self.setupNaigationBar()
         self.setupView()
-        view.backgroundColor = .lightGray
     }
     
     private func setupNaigationBar() {
