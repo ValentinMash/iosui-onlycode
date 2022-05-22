@@ -10,6 +10,9 @@
 		A7248CDF2825AE7700EA9A2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */; };
 		A7569393283AA54C00111A37 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7569392283AA54C00111A37 /* LogInViewController.swift */; };
 		A7569396283AA89600111A37 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7569395283AA89600111A37 /* PostTableViewCell.swift */; };
+		A756939F283ABACE00111A37 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756939C283ABACE00111A37 /* PhotosViewController.swift */; };
+		A75693A0283ABACE00111A37 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756939D283ABACE00111A37 /* PhotosCollectionViewCell.swift */; };
+		A75693A1283ABACE00111A37 /* PhotosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756939E283ABACE00111A37 /* PhotosTableViewCell.swift */; };
 		A7992E332822F171001047E7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E322822F171001047E7 /* PostViewController.swift */; };
 		A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E3428244F84001047E7 /* InfoViewController.swift */; };
 		A7C5957D2821A07C00400DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5957C2821A07C00400DC4 /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 		A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7569392283AA54C00111A37 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = "../../../../../Чужие ДЗ и примеры/UI/4/iOSdev-Homeworks/Navigation/Profile/LogInViewController.swift"; sourceTree = "<group>"; };
 		A7569395283AA89600111A37 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = "../../../../../Чужие ДЗ и примеры/UI/5/iOSdev-Homeworks/Navigation/PostTableViewCell/PostTableViewCell.swift"; sourceTree = "<group>"; };
+		A756939C283ABACE00111A37 /* PhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosViewController.swift; path = "../../../../../Чужие ДЗ и примеры/UI/6/iOSdev-Homeworks/Navigation/Photos/PhotosViewController.swift"; sourceTree = "<group>"; };
+		A756939D283ABACE00111A37 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosCollectionViewCell.swift; path = "../../../../../Чужие ДЗ и примеры/UI/6/iOSdev-Homeworks/Navigation/Photos/PhotosCollectionViewCell.swift"; sourceTree = "<group>"; };
+		A756939E283ABACE00111A37 /* PhotosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotosTableViewCell.swift; path = "../../../../../Чужие ДЗ и примеры/UI/6/iOSdev-Homeworks/Navigation/Photos/PhotosTableViewCell.swift"; sourceTree = "<group>"; };
 		A7992E322822F171001047E7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A7992E3428244F84001047E7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		A7C595792821A07C00400DC4 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,8 +68,19 @@
 			isa = PBXGroup;
 			children = (
 				A7569395283AA89600111A37 /* PostTableViewCell.swift */,
+				A7992E322822F171001047E7 /* PostViewController.swift */,
 			);
 			path = PostTableViewCell;
+			sourceTree = "<group>";
+		};
+		A756939B283AB9F400111A37 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				A756939D283ABACE00111A37 /* PhotosCollectionViewCell.swift */,
+				A756939E283ABACE00111A37 /* PhotosTableViewCell.swift */,
+				A756939C283ABACE00111A37 /* PhotosViewController.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 		A7C595702821A07C00400DC4 = {
@@ -85,12 +102,12 @@
 		A7C5957B2821A07C00400DC4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				A756939B283AB9F400111A37 /* Photos */,
 				A7569394283AA86400111A37 /* PostTableViewCell */,
 				A7569391283AA4F000111A37 /* AppDelegate */,
 				A7FEEE1A282BF354009B999F /* Profile */,
 				A7C595942821B7E400400DC4 /* MainTabBarController.swift */,
 				A7C595962821BAF600400DC4 /* FeedViewController.swift */,
-				A7992E322822F171001047E7 /* PostViewController.swift */,
 				A7992E3428244F84001047E7 /* InfoViewController.swift */,
 				A7C595852821A07F00400DC4 /* Assets.xcassets */,
 				A7C595872821A07F00400DC4 /* LaunchScreen.storyboard */,
@@ -180,12 +197,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7992E332822F171001047E7 /* PostViewController.swift in Sources */,
+				A756939F283ABACE00111A37 /* PhotosViewController.swift in Sources */,
 				A7248CDF2825AE7700EA9A2F /* SceneDelegate.swift in Sources */,
 				A7569393283AA54C00111A37 /* LogInViewController.swift in Sources */,
 				A7C595952821B7E400400DC4 /* MainTabBarController.swift in Sources */,
+				A75693A0283ABACE00111A37 /* PhotosCollectionViewCell.swift in Sources */,
 				A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */,
 				A7C595992821BB2E00400DC4 /* ProfileViewController.swift in Sources */,
 				A7C595972821BAF600400DC4 /* FeedViewController.swift in Sources */,
+				A75693A1283ABACE00111A37 /* PhotosTableViewCell.swift in Sources */,
 				A7569396283AA89600111A37 /* PostTableViewCell.swift in Sources */,
 				A7C5957D2821A07C00400DC4 /* AppDelegate.swift in Sources */,
 				A7FEEE1C282BF3B8009B999F /* ProfileHeaderView.swift in Sources */,

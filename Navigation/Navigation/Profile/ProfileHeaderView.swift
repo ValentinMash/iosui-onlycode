@@ -14,8 +14,12 @@ final class ProfileHeaderView: UIView {
     private var statusText = readLine()
     private var topStatusButtonConstraint: NSLayoutConstraint!
     private var spacingStatusButton: NSLayoutConstraint!
+    private let tapGestureRecognizer = UITapGestureRecognizer()
     
-    private lazy var avatarImageView: UIImageView = {
+    var heightImageViewCnstrnt: NSLayoutConstraint!
+    var widthImageViewCnstrnt: NSLayoutConstraint!
+    
+    lazy var avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemMint
         imageView.image = UIImage(named: "ava")
@@ -24,6 +28,7 @@ final class ProfileHeaderView: UIView {
         imageView.clipsToBounds = true
         imageView.layer.borderWidth = 3
         imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.isUserInteractionEnabled = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -101,11 +106,10 @@ final class ProfileHeaderView: UIView {
         self.addSubview(setStatusButton)
         self.addSubview(statusTextField)
         
-        
         let topImageViewCnstrnt = self.avatarImageView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 16)
         let leadingImageViewCnstrnt = self.avatarImageView.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16)
-        let heightImageViewCnstrnt = self.avatarImageView.heightAnchor.constraint(equalToConstant: 130)
-        let widthImageViewCnstrnt = self.avatarImageView.widthAnchor.constraint(equalToConstant: 130)
+        self.heightImageViewCnstrnt = self.avatarImageView.heightAnchor.constraint(equalToConstant: 130)
+        self.widthImageViewCnstrnt = self.avatarImageView.widthAnchor.constraint(equalToConstant: 130)
         
         let topNameLabelCnstrnt = self.nameLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 27)
         let leadingNameLabelCnstrnt = self.nameLabel.leadingAnchor.constraint(equalTo: self.avatarImageView.trailingAnchor, constant: 16)
@@ -125,7 +129,6 @@ final class ProfileHeaderView: UIView {
         let leadingStatusTextFieldCnstrnt = self.statusTextField.leadingAnchor.constraint(equalTo: self.avatarImageView.trailingAnchor, constant: 16)
         let trailingStatusTextFieldCnstrnt = self.statusTextField.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -16)
         let heightStatusTextFieldCnstrnt = self.statusTextField.heightAnchor.constraint(equalToConstant: 40)
-        
         
         NSLayoutConstraint.activate([
             topImageViewCnstrnt, leadingImageViewCnstrnt, widthImageViewCnstrnt, heightImageViewCnstrnt, topNameLabelCnstrnt, leadingNameLabelCnstrnt, trailingNameLabelCnstrnt, topStatusLabelCnstrnt, leadingStatusLabelCnstrnt, trailingStatusLabelCnstrnt, self.topStatusButtonConstraint, self.spacingStatusButton, leadingSetStatusButtonCnstrnt, trailingSetStatusButtonCnstrnt, heightSetStatusButtonCnstrnt, topStatusTextFieldCnstrnt, leadingStatusTextFieldCnstrnt, trailingStatusTextFieldCnstrnt, heightStatusTextFieldCnstrnt
@@ -161,6 +164,7 @@ final class ProfileHeaderView: UIView {
     @objc func statusTextChanged() {
         statusText = statusTextField.text
     }
+    
 }
 
 extension ProfileHeaderView: UITextFieldDelegate {
@@ -170,3 +174,4 @@ extension ProfileHeaderView: UITextFieldDelegate {
         return true
     }
 }
+

@@ -21,25 +21,27 @@ let post3 = Post(imageName: "DAO", author: "Хантер Томпсон", descri
 let post4 = Post(imageName: "TW1", author: "Валентин Машутин", description: "Редакция также выдала мне 300 долларов наличными, и почти все они были уже израсходованы на чрезвычайно опасные вещества. Наш багажник напоминал мобильный склад конфиската наркополиции. У нас было два мешка травы, семьдесят пять катышков мескалина, пять листов промокашки с мощной кислотой, полсолонки кокаина и целый арсенал разноцветных таблеток: разогнаться, притормозить, повопить и посмеяться … а еще кварта текилы, кварта рома, ящик «Бадвайзера», пинта чистого эфира и две дюжины капсул амилнитрита.", likes: "999", views: "999")
 
 
-var posts = [post1, post2, post3, post4]
-
-
 final class ProfileViewController: UIViewController {
     
-    let cellID = "cellID"
+    let postCellID = "postCell"
+    let photosCellID = "photosCell"
     
-    var tableView: UITableView = {
-        let tableView = UITableView()
+    var posts = [post1, post2, post3, post4]
+    
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
+    private let tapGestureRecognizer = UITapGestureRecognizer()
+    private var isExpanded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        layout()
+        activateConstraints()
     }
     
     func setupTableView() {
@@ -48,10 +50,11 @@ final class ProfileViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: cellID)
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: postCellID)
+        tableView.register(PhotosTableViewCell.self, forCellReuseIdentifier: photosCellID)
     }
     
-    func layout() {
+    func activateConstraints() {
         view.addSubview(tableView)
         
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -61,6 +64,7 @@ final class ProfileViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
 }
 
 extension ProfileViewController: UITableViewDelegate { }
@@ -68,16 +72,27 @@ extension ProfileViewController: UITableViewDelegate { }
 extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath) as! PostTableViewCell
-        
-        let post = posts[indexPath.row]
-        cell.post = post
-        
-        return cell
+        if indexPath.row == 0 {
+            let photosCell = tableView.dequeueReusableCell(withIdentifier: photosCellID, for: indexPath)
+            return photosCell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: postCellID, for: indexPath) as! PostTableViewCell
+            let post = posts[indexPath.row - 1]
+            cell.post = post
+            return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == 0 {
+            let photosVC = PhotosViewController()
+            navigationController?.pushViewController(photosVC, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return posts.count + 1
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -87,9 +102,5 @@ extension ProfileViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
        return 270
     }
-    
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-    
+   
 }
