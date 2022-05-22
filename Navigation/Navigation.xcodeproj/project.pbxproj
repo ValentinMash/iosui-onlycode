@@ -10,6 +10,7 @@
 		A7248CDF2825AE7700EA9A2F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */; };
 		A7569393283AA54C00111A37 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7569392283AA54C00111A37 /* LogInViewController.swift */; };
 		A7569396283AA89600111A37 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7569395283AA89600111A37 /* PostTableViewCell.swift */; };
+		A7569398283AAC6C00111A37 /* Photos in Resources */ = {isa = PBXBuildFile; fileRef = A7569397283AAC6B00111A37 /* Photos */; };
 		A7992E332822F171001047E7 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E322822F171001047E7 /* PostViewController.swift */; };
 		A7992E3528244F84001047E7 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7992E3428244F84001047E7 /* InfoViewController.swift */; };
 		A7C5957D2821A07C00400DC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C5957C2821A07C00400DC4 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		A7248CDE2825AE7600EA9A2F /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A7569392283AA54C00111A37 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = "../../../../../Чужие ДЗ и примеры/UI/4/iOSdev-Homeworks/Navigation/Profile/LogInViewController.swift"; sourceTree = "<group>"; };
 		A7569395283AA89600111A37 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostTableViewCell.swift; path = "../../../../../Чужие ДЗ и примеры/UI/5/iOSdev-Homeworks/Navigation/PostTableViewCell/PostTableViewCell.swift"; sourceTree = "<group>"; };
+		A7569397283AAC6B00111A37 /* Photos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Photos; path = "../../../../Чужие ДЗ и примеры/UI/6/iOSdev-Homeworks/Navigation/Photos"; sourceTree = "<group>"; };
 		A7992E322822F171001047E7 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		A7992E3428244F84001047E7 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		A7C595792821A07C00400DC4 /* Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Navigation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +87,7 @@
 		A7C5957B2821A07C00400DC4 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				A7569397283AAC6B00111A37 /* Photos */,
 				A7569394283AA86400111A37 /* PostTableViewCell */,
 				A7569391283AA4F000111A37 /* AppDelegate */,
 				A7FEEE1A282BF354009B999F /* Profile */,
@@ -167,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7569398283AAC6C00111A37 /* Photos in Resources */,
 				A7C595892821A07F00400DC4 /* LaunchScreen.storyboard in Resources */,
 				A7C595862821A07F00400DC4 /* Assets.xcassets in Resources */,
 			);
