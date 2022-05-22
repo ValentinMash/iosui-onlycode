@@ -31,7 +31,7 @@ final class ProfileHeaderView: UIView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "Kup-kupy"
+        label.text = "ValentinSMN"
         label.font = UIFont(name: "Helvetica-Bold", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
