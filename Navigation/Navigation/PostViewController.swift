@@ -7,26 +7,26 @@
 
 import UIKit
 
+import Foundation
+
+struct Post {
+    var title: String
+}
+
 class PostViewController: UIViewController {
-    
-    var post = Post()
+
+    let infoIcon = UIImage(systemName: "info.circle")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGray
-        self.title = post.title
-        makeBarItem()
+        //self.title = "Публикации"
+        self.view.backgroundColor = .yellow
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: infoIcon, style: .plain, target: self, action: #selector(infoButtonTapped))
     }
     
-    func makeBarItem(){
-        let barItem = UIBarButtonItem(title: "Дальше", style: .plain, target: self, action: #selector(tapAction))
-        navigationItem.rightBarButtonItem = barItem
+    @objc func infoButtonTapped() {
+        let infoVC = InfoViewController()
+        self.navigationController?.present(infoVC, animated: true, completion: nil)
+
     }
-    
-    @objc func tapAction(){
-        let viewController = InfoViewController()
-        viewController.title = "Информация"
-        navigationController?.pushViewController(viewController, animated: true)
-    }
-    
 }

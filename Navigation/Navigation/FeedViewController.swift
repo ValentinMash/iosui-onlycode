@@ -7,30 +7,33 @@
 
 import UIKit
 
-struct Post {
-    var title = "Новый пост пользователя"
-}
-
-
 class FeedViewController: UIViewController {
+
+    var transitionButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .yellow
-        makeButton()
+        setupTransitionButton()
+    }
+
+    private func setupTransitionButton() {
+        transitionButton = UIButton(type: .roundedRect)
+        transitionButton.frame = CGRect(x: 20, y: 200, width: 200, height: 44)
+        transitionButton.layer.cornerRadius = 12
+        transitionButton.backgroundColor = .systemBlue
+        transitionButton.clipsToBounds = true
+        transitionButton.setTitle("Показать публикацию", for: .normal)
+        transitionButton.setTitleColor(.white, for: .normal)
+        transitionButton.addTarget(self, action: #selector(transitionButtonTapped), for: .touchUpInside)
+        self.view.addSubview(transitionButton)
     }
     
-    func makeButton(){
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        button.center = view.center
-        button.setTitle("Переход", for: .normal)
-        button.backgroundColor = .brown
-        button.addTarget(self, action: #selector(tapAction), for: .touchUpInside)
-        view.addSubview(button)
+    @objc private func transitionButtonTapped(sender: UIButton) {
+        let postVC = PostViewController()
+        let post = Post(title: "Новая публикация")
+        postVC.navigationItem.title = post.title
+        self.navigationController?.pushViewController(postVC, animated: true)
     }
     
-    @objc func tapAction() {
-        let viewController = PostViewController()
-        present(viewController, animated: true)
-    }
 }
+

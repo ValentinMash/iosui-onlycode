@@ -7,36 +7,32 @@
 
 import UIKit
 
-class UITabBarViewController: UITabBarController {
-    
-    let userFeed = FeedViewController()
-    let userProfile = ProfileViewController()
-    let userPost = PostViewController()
-    
+class MainTabBarController: UITabBarController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
-        setupTabBar()
+        view.backgroundColor = .white
+        UITabBar.appearance().barTintColor = .systemBackground
+        tabBar.tintColor = .systemBlue
+        setupVC()
     }
     
-    func setupTabBar(){
-        
-        let navControllerFeed = UINavigationController(rootViewController: userFeed)
-        userFeed.tabBarItem.title = "Статус"
-        userFeed.tabBarItem.image = UIImage(systemName: "bolt")
-        userFeed.navigationItem.title = "Статус пользователя"
-        
-        let navControllerProfile = UINavigationController(rootViewController: userProfile)
-        userProfile.tabBarItem.title = "Профиль"
-        userProfile.tabBarItem.image = UIImage(systemName: "smiley")
-        userProfile.navigationItem.title = "Профиль пользователя"
-        
-        let navControllerPost = UINavigationController(rootViewController: userPost)
-        userPost.tabBarItem.title = "Пост"
-        userPost.tabBarItem.image = UIImage(systemName: "star")
-        userPost.navigationItem.title = "Пост пользователя"
-        
-        viewControllers = [navControllerFeed, navControllerProfile, navControllerPost]
+    fileprivate func createNavController(for rootViewController: UIViewController,
+                                                      title: String,
+                                                      image: UIImage) -> UIViewController {
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.tabBarItem.title = title
+        navController.tabBarItem.image = image
+        navController.navigationBar.prefersLargeTitles = true
+        rootViewController.navigationItem.title = title
+        return navController
     }
     
+    func setupVC() {
+        viewControllers = [
+            createNavController(for: FeedViewController(), title: NSLocalizedString("Лента", comment: ""), image: UIImage(systemName: "house.fill")!),
+            createNavController(for: ProfileViewController(), title: NSLocalizedString("Профиль", comment: ""), image: UIImage(systemName: "person.fill")!),
+        ]
+    }
+
 }
