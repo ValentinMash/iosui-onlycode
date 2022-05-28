@@ -37,7 +37,7 @@ class LogInViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
         button.backgroundColor = .systemBlue
         button.contentMode = .scaleAspectFill
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 15
         button.center = contentView.center
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -54,7 +54,7 @@ class LogInViewController: UIViewController {
         stackView.spacing = 0
         stackView.layer.borderColor = UIColor.lightGray.cgColor
         stackView.layer.borderWidth = 0.5
-        stackView.layer.cornerRadius = 10
+        stackView.layer.cornerRadius = 15
         stackView.clipsToBounds = true
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -123,7 +123,7 @@ class LogInViewController: UIViewController {
         let contentViewBottomConstraint = self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
         let contentViewWidthConstraint = self.contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor)
         
-        let imageViewTopConstraint = self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 120)
+        let imageViewTopConstraint = self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 25)
         let imageViewWidthConstraint = self.imageView.widthAnchor.constraint(equalToConstant: 100)
         let imageViewHeigthConstraint = self.imageView.heightAnchor.constraint(equalToConstant: 100)
         let imageViewCenterXConstraint = self.imageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
