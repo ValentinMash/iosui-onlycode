@@ -76,6 +76,7 @@ class PostViewController: UIViewController {
         zoomingImageView.backgroundColor = .systemPink
         zoomingImageView.image = avatarImageView.image
         
+        
         if let keyWindow = UIApplication.shared.connectedScenes.compactMap({ $0 as? UIWindowScene }).flatMap({ $0.windows }).first(where: { $0.isKeyWindow }) {
             backView = UIView(frame: keyWindow.frame)
             

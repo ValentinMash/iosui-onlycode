@@ -36,7 +36,7 @@ final class ProfileViewController: UIViewController {
     }()
     
     private let tapGestureRecognizer = UITapGestureRecognizer()
-    private var isExpanded = false
+    private var isExpanded = true
     
     override func viewDidLoad() {
         super.viewDidLoad()

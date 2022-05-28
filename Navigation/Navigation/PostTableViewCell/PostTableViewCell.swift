@@ -34,9 +34,11 @@ class PostTableViewCell: UITableViewCell {
         let imageView = UIImageView(image: image!)
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .black
+        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
         return imageView
-    }()
+            }()
     
     let authorLabel: UILabel = {
         let label = UILabel()
