@@ -1,12 +1,12 @@
 *.zip
 
-*.jpg
+# *.jpg
 
-*.json
+# *.json
 
-*.xcbkptlist
+# *.xcbkptlist
 
-*.plist
+# *.plist
 
 # Игнор лист
 
@@ -100,6 +100,7 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+#123
 
 
 
