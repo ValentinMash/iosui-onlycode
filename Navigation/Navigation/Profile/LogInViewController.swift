@@ -37,7 +37,7 @@ class LogInViewController: UIViewController {
         button.setBackgroundImage(UIImage(named: "blue_pixel"), for: .normal)
         button.backgroundColor = .systemBlue
         button.contentMode = .scaleAspectFill
-        button.layer.cornerRadius = 15
+        button.layer.cornerRadius = 10
         button.center = contentView.center
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -54,7 +54,7 @@ class LogInViewController: UIViewController {
         stackView.spacing = 0
         stackView.layer.borderColor = UIColor.lightGray.cgColor
         stackView.layer.borderWidth = 0.5
-        stackView.layer.cornerRadius = 15
+        stackView.layer.cornerRadius = 10
         stackView.clipsToBounds = true
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -123,19 +123,19 @@ class LogInViewController: UIViewController {
         let contentViewBottomConstraint = self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor)
         let contentViewWidthConstraint = self.contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor)
         
-        let imageViewTopConstraint = self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 25)
+        let imageViewTopConstraint = self.imageView.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 50)
         let imageViewWidthConstraint = self.imageView.widthAnchor.constraint(equalToConstant: 100)
         let imageViewHeigthConstraint = self.imageView.heightAnchor.constraint(equalToConstant: 100)
         let imageViewCenterXConstraint = self.imageView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor)
         
-        let stackViewTopConstraint = self.stackView.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 120)
-        let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16)
-        let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
+        let stackViewTopConstraint = self.stackView.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 50)
+        let stackViewTrailingConstraint = self.stackView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -35)
+        let stackViewLeadingConstraint = self.stackView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 35)
         
         let logInButtonTopConstraint = self.logInButton.topAnchor.constraint(equalTo: self.stackView.bottomAnchor, constant: 16)
         let logInButtonHeightConstraint = self.logInButton.heightAnchor.constraint(equalToConstant: 50)
         let logInButtonWidthConstraint = self.logInButton.widthAnchor.constraint(equalTo: self.stackView.widthAnchor)
-        let logInButtonLeadingConstraint = self.logInButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16)
+        let logInButtonLeadingConstraint = self.logInButton.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 35)
         
         NSLayoutConstraint.activate([
             srollViewTopConstraint, srollViewBottomConstraint, srollViewLeadingConstraint, srollViewTrailingConstraint, contentViewTopConstraint, contentViewHeightXConstraint, contentViewBottomConstraint, contentViewWidthConstraint, stackViewTopConstraint, stackViewTrailingConstraint, stackViewLeadingConstraint, imageViewTopConstraint, imageViewWidthConstraint, imageViewHeigthConstraint, imageViewCenterXConstraint, logInButtonHeightConstraint, logInButtonTopConstraint, logInButtonWidthConstraint, logInButtonLeadingConstraint
